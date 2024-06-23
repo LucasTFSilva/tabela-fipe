@@ -45,7 +45,7 @@ public class Principal {
                 .sorted(Comparator.comparing(Dados::codigo))
                 .forEach(System.out::println);
 
-        System.out.println("\nInforme o código da marca para consulta: ");
+        System.out.println("\nInforme o código para consulta:");
         var codigoMarca = scanner.nextLine();
         endereco = endereco + "/" + codigoMarca + "/modelos";
         json = consumoAPI.obterDados(endereco);
@@ -56,7 +56,7 @@ public class Principal {
                 .sorted(Comparator.comparing(Dados::codigo))
                 .forEach(System.out::println);
 
-        System.out.println("\nDigite o trecho do nome do carro a ser pesqisado");
+        System.out.println("\nDigite o nome do veículo para pesquisa:");
         var nomeVeiculo = scanner.nextLine();
 
         List<Dados> modelosFiltrados = listaModelos.modelos().stream()
@@ -66,7 +66,7 @@ public class Principal {
         System.out.println("\nModelos filtrados");
         modelosFiltrados.forEach(System.out::println);
 
-        System.out.println("\nDigite o código do modelo para buscar os valores de avaliação");
+        System.out.println("\nDigite o código do modelo para buscar os valores de avaliação:");
         var codigoModelo = scanner.nextLine();
         endereco = endereco + '/' + codigoModelo + "/anos";
         json = consumoAPI.obterDados(endereco);
@@ -80,7 +80,7 @@ public class Principal {
             veiculos.add(veiculo);
         }
 
-        System.out.println("Todos os veículos filtrados com avaliações por ano: ");
+        System.out.println("\nTodos os veículos filtrados com avaliação por ano: ");
         veiculos.forEach(System.out::println);
     }
 }

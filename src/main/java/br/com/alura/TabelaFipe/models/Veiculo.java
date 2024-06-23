@@ -9,4 +9,13 @@ public record Veiculo(@JsonAlias("Valor") String valor,
                       @JsonAlias("Modelo") String modelo,
                       @JsonAlias("AnoModelo") Integer ano,
                       @JsonAlias("Combustivel") String tipoCombustivel) {
+    @Override
+    public String toString() {
+        return "\n*******************\n" +
+                "\nValor: " + valor +
+                "\nMarca: " + marca +
+                "\nModelo: " + modelo +
+                "\nAno: " + ano +
+                "\nCombustível: " + tipoCombustivel;
+    }
 }
